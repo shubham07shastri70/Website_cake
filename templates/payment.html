@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<title>Order
+	
+	</title>
+	<link rel="icon" href="{% static 'logo.png' %}">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://kit.fontawesome.com/bc5b9a65b6.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+	<style>
+      marquee{
+      font-size: 30px;
+      font-weight: 800;
+      color: #8ebf42;
+      font-family: sans-serif;
+      }
+    </style>
+</head>
+<body >
+	<style>
+		select{
+			width: 460px;
+			height:52px;
+			background-color: #f3f5f8;
+			margin-bottom: 15px;
+			border: none;
+			margin-right: 45px;
+		}
+		input{
+			margin-right: 45px;
+		}
+	</style>
+	<div class="jumbotron bg-tr bg-overlay" style="background-image: url({% static 'back1.jpg' %});">
+		<div class="row">
+			<div class="col-1">
+			
+			</div>
+			<div class="logo col-3 blk">
+				<img src="{% static 'logo.png' %}">
+			</div>
+			<div class="center-head  blk my-auto" style="margin-left: 15px">
+				<h2 class="cmp center-head brand-text ">Baked By Heart</h2>
+				<h2 class="brand-text">(Our cake page)</h2>
+			</div>
+		</div>
+	</div>
+	<div class=" d-flex justify-content-center">
+		<div class="s-block col-6 tc bg-tr d-flex align-items-center" style="	background-image: url({% static 'cake.jfif' %});">
+			<h1 class="d-flex align-items-center"> Celebrate Your Joy With Our Cake</h1>
+		</div>
+	</div>
+	<div class="main-body"> 
+		<br> 
+		<br> 
+
+		<div class="bottom-sticky">
+			<a href="https://wa.me/917224954797 " class="bottom-sticky"><img src="https://d2m1a7vdhhb67a.cloudfront.net/sites/all/themes/baking/img/whatsapp-icon.png" alt="Send to Whatapp" title="Send to Whatapp"></a>
+		</div>
+			
+		<section>
+			<div class="container">
+			<marquee>Currently We are available in Mhow and Pithampur area. Although urgent orders from nearby cities are also welcome but Subject to extra/delivery charge.</marquee>
+			<marquee>
+वर्तमान में हम महू और पीथमपुर क्षेत्र में उपलब्ध हैं। हालांकि आसपास के शहरों से तत्काल orders भी स्वागत योग्य हैं, लेकिन अतिरिक्त / वितरण शुल्क के अधीन हैं।</marquee>
+				<h2>Order Summary :</h2><br>
+				<h2 style="display:inline-block;" id="oti">Order Title : {{ title }}</h2></label><br>
+				<h2 style="display:inline-block;">Amount : <span>&#8377;</span> <span id="base_price">{{ price }}</span><h2></label><br>
+           		<h2 class="brand-text" style="font-weight: 900">Enter details carefully</h2>
+				<form method="POST" class="form-inline" action="../checkout/paymentpg">
+				<input type="hidden" name="cake_title" id="ctitle" value="sss">
+				<input type="hidden" name="amount" id="amount" value="{{ price }}"> 
+				 
+                                {{ form.cake_weight }} <br>
+                                {{ form.message }}
+                                {{ form.name }}
+                                {{ form.phone }}
+                                {{ form.address }}
+
+                                {% csrf_token %}
+								
+                                <input class="btn btn-success" type="submit" id="pay" value="pay ₹  {{ price }}"> 
+                
+                        </div>
+                    </div>
+                </div>
+			</div>
+		</section>
+
+
+
+
+</body>
+</html>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+	<script type="text/javascript" src="{% static 'static\script.js' %}"></script>
+	
+	<script>
+	$(document).ready(function(){
+		var ct=$('#oti').text();
+		$('#ctitle').val(ct);
+		var base = $('#base_price').text();
+		var price=base;
+	$('select').on('change', function() {
+		var val1=this.value;
+		price=val1*base;
+		$('#base_price').text(price);
+		$('#amount').val(price);
+		$('#pay').val("pay 	₹ "+price);
+		
+});
+	
+	});
+
+
+</script>
+
+
+</body>
+</html>
+
+

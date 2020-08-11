@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<title>Failure</title>
+    <link rel="icon" href="{% static 'logo.png' %}">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://kit.fontawesome.com/bc5b9a65b6.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+<body>
+<div style="display:none">
+   	<input type="hidden" name="csrfmiddlewaretoken" value="{% csrf_token %}">
+</div>
+<div class="container">
+<div class="container">
+<div class="tc">
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h4>Sorry !</h4>
+<h4>Payment Failed</h4>
+
+<h4><a href="../">Go back to site</h4>
+</div></div></div>
+
+</body>
+</html>
