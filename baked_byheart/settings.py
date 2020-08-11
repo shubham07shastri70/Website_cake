@@ -26,7 +26,7 @@ SECRET_KEY = 'nctdiz(bcxi+a4&ccz0kz86k7tic+x^(62n4sumex67-*0xjul'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
