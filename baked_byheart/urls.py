@@ -26,8 +26,8 @@ urlpatterns = [
     url(r'^files/', include('db_file_storage.urls')),
     path('',include('main_page.urls')),
     path('checkout/',include('checkout.urls')),
-    path('success',checkout.views.payu_success,name=""),
-    path('failure',checkout.views.payu_failure,name=""),
+    path('success/',checkout.views.payu_success,name=""),
+    path('failure/',checkout.views.payu_failure,name=""),
     path('admin/', admin.site.urls),
 ]
 if settings.DEBUG: 
