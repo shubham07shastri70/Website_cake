@@ -69,10 +69,10 @@ def payu_checkout(request):
 def payu_success(request):
     data = {k: v[0] for k, v in dict(request.POST).items()}
     response = payu.verify_transaction(data)
-    return JsonResponse(response)
+    return render(request,'success.html')
 
 @csrf_exempt
 def payu_failure(request):
     data = {k: v[0] for k, v in dict(request.POST).items()}
     response = payu.verify_transaction(data)
-    return JsonResponse(response)
+    return render(request,'failure.html')

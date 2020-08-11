@@ -147,8 +147,8 @@ PAYU_CONFIG = {
     "merchant_key": 'SCeS3L7i',
     "merchant_salt":'FFZ7lXR0M2',
     "mode": "live",
-    "success_url": "http://127.0.0.1:8000/success",
-    "failure_url": "http://127.0.0.1:8000/failure"
+    "success_url": "http://bakedbyheart.ezyro.com/success.html",
+    "failure_url": "http://bakedbyheart.ezyro.com/failed.html",
 }
 # Activate Django-Heroku.
 django_heroku.settings(locals())
