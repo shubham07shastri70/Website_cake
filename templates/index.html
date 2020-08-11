@@ -7,6 +7,11 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<script src="https://kit.fontawesome.com/bc5b9a65b6.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <style>
+    input:focus, textarea:focus, select:focus{
+        outline: none;
+    }
+</style>
 </head>
 <body >
 	<div class="jumbotron bg-tr bg-overlay" style="background-image: url({% static 'back1.jpg' %});">
@@ -49,8 +54,8 @@
                <img src ="{{ BR.cake_photo.url }}" width="290" style="border-bottom: solid 2.5px #400b5e;">
                 
                 <form action="../payment" style="text-align:center;">
-                    <div class="section-title"><input type="text" name="title" value="{{ BR.cake_title }}" style="margin:0px; border: none;text-align:center;">
-               	    <h2><span>&#8377;</span><input type="text" name="price" value="{{ BR.cake_price }}" style="margin:0px; width:110px;border: none;text-align:center;"></h2></div>
+                    <div class="section-title"><input type="text" name="title" value="{{ BR.cake_title }}" style="margin:0px; border: none;text-align:center;" readonly>
+               	    <h2><span>&#8377;</span><input type="text" name="price" value="{{ BR.cake_price }}" style="margin:0px; width:110px;border: none;text-align:center;" readonly></h2></div>
 
 				    <input class="btn btn-success" type="submit" name="" value="buy" style="margin:0px; ">
 	  
